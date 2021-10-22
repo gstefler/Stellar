@@ -15,7 +15,7 @@ const editStar = require('../middleware/star/editStar');
 const returnToStar = require('../middleware/star/returnToStar');
 
 
-export default function(app){
+module.exports = function(app){
     const objRepo = {};
     app.use('/', reroutToSystems(objRepo));
     app.get('/systems', getSystems(objRepo), render(objRepo, 'index'));
