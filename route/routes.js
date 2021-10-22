@@ -1,17 +1,17 @@
-const reroutToSystems;
-const getSystems;
-const render;
-const generateSystem;
-const reroutToSystem;
-const getSystem;
-const generatePlanet;
-const reroutToPlanet;
-const delSystem;
-const getPlanet;
-const editPlanet;
-const delPlanet;
-const getStar;
-const editStar;
+const reroutToSystems = require('../middleware/system/reroutToSystems');
+const getSystems = require('../middleware/system/getSystems');
+const render = require('../middleware/render');
+const generateSystem = require('../middleware/system/generateSystem');
+const reroutToSystem = require('../middleware/system/reroutToSystem');
+const getSystem = require('../middleware/system/getSystem');
+const generatePlanet = require('../middleware/planet/generatePlanet');
+const reroutToPlanet = require('../middleware/planet/reroutToSystems');
+const delSystem = require('../middleware/system/delSystem');
+const getPlanet = require('../middleware/planet/getPlanet');
+const editPlanet = require('../middleware/planet/editPlanet');
+const delPlanet = require('../middleware/planet/delPlanet');
+const getStar = require('../middleware/star/getStar');
+const editStar = require('../middleware/star/editStar');
 
 
 module.exports = function(app){
