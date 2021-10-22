@@ -15,7 +15,7 @@ const editStar = require('../middleware/star/editStar');
 const returnToStar = require('../middleware/star/returnToStar');
 
 
-module.exports = function(app){
+export default function(app){
     const objRepo = {};
     app.use('/', reroutToSystems(objRepo));
     app.get('/systems', getSystems(objRepo), render(objRepo, 'index'));
@@ -31,4 +31,4 @@ module.exports = function(app){
     app.get('/systems/edit/:systemid/:starid', getPlanet(objRepo), render(objRepo, 'star_edit'));
     app.use('/systems/edit/:systemid/:starid', editStar(objRepo), returnToStar(objRepo));
     app.use((req, res) => {res.status(404).render('not_found', { url: req.url })});
-}
+};
