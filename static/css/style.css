@@ -43,12 +43,12 @@ body
 }
 
 .star{
-    content: url(./sun.png);
+    content: url(../img/sun.png);
     height: 100vh;
 }
 
 .planet{
-    content: url(./planet.png);
+    content: url(../img/planet.png);
     width: 200px;
     height: 200px;
 }
