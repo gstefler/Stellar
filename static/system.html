@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Star</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/background.css" rel="stylesheet">
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="images/big_star.png" class="bigstar planet" alt="star_big" onclick="onStarClick()">
+                </td>
+                <td class="planets">
+                    <img src="images/planet.png" height="40vh" class="planet" onclick="onPlanetClick()">
+                    <img src="images/planet.png" height="80vh" class="planet" onclick="onPlanetClick()">
+                    <img src="images/planet.png" height="150vh" class="planet" onclick="onPlanetClick()">
+                    <img src="images/planet.png" height="99vh" class="planet" onclick="onPlanetClick()">
+                    <img src="images/planet.png" height="100vh" class="planet" onclick="onPlanetClick()">
+                    <img src="https://img.icons8.com/ios/100/000000/add--v1.png" alt="add_btn" class="hoverable"
+                        onclick="onAddPlanet()" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function onPlanetClick() {
+            window.location.href = "planet.html";
+        }
+        function onStarClick() {
+            window.location.href = "star.html";
+        }
+        function onAddPlanet() {
+            addPlanet();
+        }
+    </script>
+</body>
+
+</html>

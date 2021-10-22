@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Planet</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/background.css" rel="stylesheet">
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="images/planet.png" class="bigstar">
+                </td>
+                <td>
+                    <table class="table table-light table-hover">
+                        <tbody>
+                        <tr>
+                            <td>
+                                Avg orbital speed
+                            </td>
+                            <td>
+                                32 km/s
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Mass
+                            </td>
+                            <td>
+                                53.97237×10^24 kg
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Mean radius
+                            </td>
+                            <td>
+                                8526.0 km
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-dark" onclick="window.location.href='planet_edit.html'">
+                                    Edit
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-danger" onclick="onDeletePlanet()">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function onDeletePlanet() {
+            deletePlanet();
+        }
+    </script>
+</body>
+
+</html>
