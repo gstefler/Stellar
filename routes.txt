@@ -9,50 +9,51 @@ bolygó nem létezhet csillag nélkül(vagy talán igen céltalanul sodródva az
 
 Routing
 GET     /                                   - átvisz a /systems -re!(szerintem így logikusabb)
-            reroutToSystemsMW
+            reroutToSystems
 
 GET     /systems                            - index.html
-            fetchSystemsMW
-            renderMW(index.html)
+            fetchSystems
+            render(index.html)
 
 GET     /systems/new                        - új rendszer generálása
-            generateNewSystemMW
-            reroutToSystemMW                -> /systems/:systemid, létrehozott rendszeré
+            generateSystem
+            reroutToSystem                  -> /systems/:systemid, létrehozott rendszeré
 
 GET     /systems/:systemid                  - system.html
-            fetchSystemByIdMW
-            renderMW(system.html)
+            fetchSystem
+            render(system.html)
 
 GET     /systems/new/:systemid/planet       - új bolygó generálása
-            genratePlanetMW
+            genratePlanet
             reroutToPlanet                  -> /systems/:systemid/:planetid, létrehozott bolygóé
 
 GET     /systems/delete/:systemid           - rendszer törlése
-            deleteSystemByIdMW
-            reroutToSystemsMW               - már volt egyszer
+            deleteSystemById
+            reroutToSystems                 - már volt egyszer
 
 GET     /systems/:systemid/:planetid
-            fetchPlanetByIdMW
-            renderMW(planet.html)
+            fetchPlanet
+            render(planet.html)
 
 GET     /systems/edit/:systemid/:planetid   - planet_edit.html
-            renderMW(planet_edit.html)
+            fetchPlanet
+            render(planet_edit.html)
 
 POST    /systems/edit/:systemid/:planetid   - bolygó editálása
-            editPlanetMW
+            editPlanet
             reroutToPlanet()
 
 POST    /systems/delete/:systemid/:planetid - bolygó törlése
-            deletePlanetMW
-            reroutToSystemMW
+            deletePlanet
+            reroutToSystem
 
 GET     /systems/:systemid/:starid          - star.html
-            fetchStarByIdMW
-            renderMW(star.html)
+            fetchStarById  
+            render(star.html)
 
 GET     /systems/edit/:systemid/:starid     - star_edit.html
-            renderMW(star_edit.html)
-            
-POST    /systems/edit/:systemid/:planetid   - csillag editálása
-            editStarMW
+            render(star_edit.html)
+
+POST    /systems/edit/:systemid/:starid   - csillag editálása
+            editStar
             reroutToStar()
