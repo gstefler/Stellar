@@ -12,6 +12,7 @@ const editPlanet = require('../middleware/planet/editPlanet');
 const delPlanet = require('../middleware/planet/delPlanet');
 const getStar = require('../middleware/star/getStar');
 const editStar = require('../middleware/star/editStar');
+const returnToStar = require('../middleware/star/returnToStar');
 
 
 module.exports = function(app){
@@ -29,4 +30,5 @@ module.exports = function(app){
     app.get('/systems/:systemid/:starid', getStar(objRepo), render(objRepo, 'star'));
     app.get('/systems/edit/:systemid/:starid', getPlanet(objRepo), render(objRepo, 'star_edit'));
     app.use('/systems/edit/:systemid/:starid', editStar(objRepo), returnToStar(objRepo));
+    app.use((req, res) => {res.status(404).render('not_found', { url: req.url })});
 }

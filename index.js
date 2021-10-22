@@ -6,6 +6,8 @@ const app = express();
 // Statikus fileok kiszolgálására
 app.use(express.static('static'));
 
+app.set('view engine', 'ejs');
+
 // Routing, a routing txt-ben megírtak alapján
 require('./route/routes')(app);
 

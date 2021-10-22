@@ -84,7 +84,6 @@ class Stars {
     }
     scroll(scrl){
         this.lastScroll = scrl - this.lastScroll;
-        console.log(this.lastScroll);
         context.clearRect(0, 0, canvas.width, canvas.height);
         for (let i = 0; i < this.size; ++i) {
             let _w = window.innerWidth / 2;

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404 (Not Found)! | <%= url.substr(1,url.length) %></title>
+    <link rel="stylesheet" href="css/style.css" type='text/css'>
+</head>
+<body>
+    <script defer>/*enable animation*/ animated = true;</script>
+    <script src="js/stars.js" defer></script>
+    <canvas id="starfield" width="3000" height="2000"></canvas>
+    <div id='horizon'>
+      <div class='glow'></div>
+    </div>
+    <div id='earth'></div>
+    <div id='title'>
+        404
+    </div>
+    <div id='subtitle'>
+        <p class="url_message">The requested URL '<%= url.substr(1,url.length) %>' was not found on this server.</p>
+        <p class="pun">Maybe it was swallowed by a black hole!</p>
+    </div>
+</body>
+</html>
