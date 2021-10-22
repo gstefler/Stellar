@@ -1,0 +1,58 @@
+Csillagok és bolygók
+bolygó nem létezhet csillag nélkül(vagy talán igen céltalanul sodródva az űrben, de ez most mind1)
+
+-index.html --csillagrendszerek egy listában, lista utólsó elemére kattintva generál egy új rendszert
+-system.html --adott rendszer bolygói és csillaga
+-star.html --adott csillag és adatai
+-planet.html --adott bolygó és adatai
+-star/planet_edit.html --kiválasztott csillag / bolygó adatainak a módosítása
+
+Routing
+GET     /                                   - átvisz a /systems -re!(szerintem így logikusabb)
+            reroutToSystemsMW
+
+GET     /systems                            - index.html
+            fetchSystemsMW
+            renderMW(index.html)
+
+GET     /systems/new                        - új rendszer generálása
+            generateNewSystemMW
+            reroutToSystemMW                -> /systems/:systemid, létrehozott rendszeré
+
+GET     /systems/:systemid                  - system.html
+            fetchSystemByIdMW
+            renderMW(system.html)
+
+GET     /systems/new/:systemid/planet       - új bolygó generálása
+            genratePlanetMW
+            reroutToPlanet                  -> /systems/:systemid/:planetid, létrehozott bolygóé
+
+GET     /systems/delete/:systemid           - rendszer törlése
+            deleteSystemByIdMW
+            reroutToSystemsMW               - már volt egyszer
+
+GET     /systems/:systemid/:planetid
+            fetchPlanetByIdMW
+            renderMW(planet.html)
+
+GET     /systems/edit/:systemid/:planetid   - planet_edit.html
+            renderMW(planet_edit.html)
+
+POST    /systems/edit/:systemid/:planetid   - bolygó editálása
+            editPlanetMW
+            reroutToPlanet()
+
+POST    /systems/delete/:systemid/:planetid - bolygó törlése
+            deletePlanetMW
+            reroutToSystemMW
+
+GET     /systems/:systemid/:starid          - star.html
+            fetchStarByIdMW
+            renderMW(star.html)
+
+GET     /systems/edit/:systemid/:starid     - star_edit.html
+            renderMW(star_edit.html)
+            
+POST    /systems/edit/:systemid/:planetid   - csillag editálása
+            editStarMW
+            reroutToStar()
