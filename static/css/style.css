@@ -8,6 +8,15 @@
     color: aliceblue;
 }
 
+canvas {
+  height: auto;
+  background: radial-gradient(ellipse at bottom, #0c1116 0%, #161927 100%);
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: -1;
+}
+
 
 html {
     position: fixed;
@@ -192,11 +201,3 @@ body
     height: 200px;
 }
 
-canvas {
-    height: auto;
-    background: radial-gradient(ellipse at bottom, #0c1116 0%, #161927 100%);
-    position: absolute;
-    left:0;
-    top:0;
-    z-index: -1;
-}

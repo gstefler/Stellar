@@ -1,0 +1,30 @@
+<%- include ('header.ejs') -%>
+    <link rel="stylesheet" href="/css/system_style.css" type="text/css">
+    <script src="/js/logic.js" defer></script>
+</head>
+<body>
+    <script src="/js/star_background.js" defer></script>
+    <canvas id="starfield" width="3000" height="2000"></canvas>
+    <div class="content" id="content">
+        <div class="system">
+            <div class="card">
+                <img src="/images/sun.png" onclick="onStarClick()">
+                <script>function onStarClick() { window.location.href = "/systems/systemid/starid" }</script>
+            </div>
+            <div class="card planet" onclick="onPlanetClick()"></div>
+            <div class="card planet" onclick="onPlanetClick()"></div>
+            <div class="card planet" onclick="onPlanetClick()"></div>
+            <div class="card planet" onclick="onPlanetClick()"></div>
+            <div class="card planet" onclick="onPlanetClick()"></div>
+            <div class="card planet" onclick="onPlanetClick()"></div>
+            <div class="card planet" onclick="onPlanetClick()"></div>
+            <div class="card planet" onclick="onPlanetClick()"></div>
+            <div class="card planet" onclick="onPlanetClick()"></div>
+            <div class="card planet" onclick="onPlanetClick()"></div>
+            <div class="card planet" onclick="onPlanetClick()"></div>
+            <div class="card planet" onclick="onPlanetClick()"></div>
+        </div>
+    </div>
+    <script>function onPlanetClick() { window.location.href = "/systems/systemid/planetid" }</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<%- include ('header.ejs') -%>
+    <title>Planet-edit</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/background.css" rel="stylesheet">
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="/images/planet.png" class="bigstar">
+                </td>
+                <td>
+                    <table class="table table-light table-hover">
+                        <tbody>
+                        <tr>
+                            <td>
+                                Avg orbital speed
+                            </td>
+                            <td>
+                                <form>
+                                    <input class="form-control">
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Mass
+                            </td>
+                            <td>
+                                <form>
+                                    <input class="form-control">
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Mean radius
+                            </td>
+                            <td>
+                                <form>
+                                    <input class="form-control">
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-dark" onclick="window.location.href='planet.html'">
+                                    Submit
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

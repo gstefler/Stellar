@@ -1,0 +1,78 @@
+<%- include ('header.ejs') -%>
+    <title>Stellar systems</title>
+    <link href="/css/index_style.css" rel="stylesheet" type='text/css'>
+</head>
+
+<body>
+    <script src="/js/star_background.js" defer></script>
+    <canvas id="starfield" width="3000" height="2000"></canvas>
+    <h1 class="text-center text-light">Stellar systems</h1>
+    <table class="center">
+        <tbody>
+            <tr onclick="onStarClick()" class="hoverable">
+                <td align="center">
+                    <img src="./images/favicon.png" alt="star_icon" height="150">
+                </td>
+                <td>
+                    <img src="./images/planet.png" alt="planet_image" height="70">
+                    <img src="./images/planet.png" alt="planet_image" height="50">
+                    <img src="./images/planet.png" alt="planet_image" height="63">
+                    <img src="./images/planet.png" alt="planet_image" height="45">
+                    <img src="./images/planet.png" alt="planet_image" height="42">
+                </td>
+            </tr>
+            <tr onclick="onStarClick()" class="hoverable">
+                <td align="center">
+                    <img src="./images/favicon.png" alt="star_icon" height="120">
+                </td>
+                <td>
+                    <img src="./images/planet.png" alt="planet_image" height="55">
+                    <img src="./images/planet.png" alt="planet_image" height="80">
+                    <img src="./images/planet.png" alt="planet_image" height="44">
+                    <img src="./images/planet.png" alt="planet_image" height="35">
+                </td>
+            </tr>
+            <tr onclick="onStarClick()" class="hoverable">
+                <td align="center">
+                    <img src="./images/favicon.png" alt="star_icon" height="130">
+                </td>
+                <td>
+                    <img src="./images/planet.png" alt="planet_image" height="24">
+                    <img src="./images/planet.png" alt="planet_image" height="35">
+                    <img src="./images/planet.png" alt="planet_image" height="40">
+                    <img src="./images/planet.png" alt="planet_image" height="44">
+                    <img src="./images/planet.png" alt="planet_image" height="80">
+                    <img src="./images/planet.png" alt="planet_image" height="78">
+                    <img src="./images/planet.png" alt="planet_image" height="50">
+                </td>
+            </tr>
+            <tr onclick="onStarClick()" class="hoverable">
+                <td align="center">
+                    <img src="./images/favicon.png" alt="star_icon" height="111">
+                </td>
+                <td>
+                    <img src="./images/planet.png" alt="planet_image" height="24">
+                    <img src="./images/planet.png" alt="planet_image" height="35">
+                    <img src="./images/planet.png" alt="planet_image" height="40">
+                    <img src="./images/planet.png" alt="planet_image" height="44">
+                    <img src="./images/planet.png" alt="planet_image" height="22">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div align="center">
+        <img src="https://img.icons8.com/ios/100/000000/add--v1.png" alt="add_btn" class="hoverable"
+            onclick="onAddClick()" />
+    </div>
+
+    <script>
+        function onStarClick() {
+            window.location.href = "/systems/systemid";
+        }
+        function onAddClick() {
+            add();
+        }
+    </script>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
  * @returns 
  */
 module.exports = function (objectrepository) {
-    return function (req, res, next) {
-        next();
+    return function (req, res) {
+        res.redirect('/systems');
     };
 };

@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- inlcude('header') -%>
     <title>Error 404 (Not Found)! | <%= url.substr(1,url.length) %></title>
-    <link rel="stylesheet" href="css/style.css" type='text/css'>
+    <link rel="stylesheet" href="./css/style.css" type='text/css'>
 </head>
 <body>
     <script defer>/*enable animation*/ animated = true;</script>
-    <script src="js/stars.js" defer></script>
+    <script src="./js/star_background.js" defer></script>
     <canvas id="starfield" width="3000" height="2000"></canvas>
     <div id='horizon'>
       <div class='glow'></div>
