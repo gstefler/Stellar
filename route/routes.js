@@ -17,7 +17,6 @@ const returnToStar = require('../middleware/star/returnToStar');
 
 module.exports = function(app){
     const objRepo = {};
-    app.get('/systems', getSystems(objRepo), render(objRepo, 'index'));
     app.get('/systems/new', generateSystem(objRepo), reroutToSystems());
     app.get('/systems/systemid', getSystem(objRepo), render(objRepo, 'system'));
     app.get('/systems/new/systemid/planet', generatePlanet(objRepo), reroutToPlanet(objRepo));
@@ -29,5 +28,6 @@ module.exports = function(app){
     app.get('/systems/systemid/starid', getStar(objRepo), render(objRepo, 'star'));
     app.get('/systems/edit/systemid/starid', getPlanet(objRepo), render(objRepo, 'star_edit'));
     app.use('/systems/edit/systemid/starid', editStar(objRepo), returnToStar(objRepo));
+    app.get('/systems', getSystems(objRepo), render(objRepo, 'index'));
     app.use('/', reroutToSystems(objRepo));
 };

@@ -9,6 +9,5 @@ const { render } = require("ejs");
 module.exports = function(objRepo, viewName){
     return function(req, res){
         res.render(viewName);
-        return next();
     }
 }
