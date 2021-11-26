@@ -1,30 +1,84 @@
-<%- include ('header.ejs') -%>
-    <link rel="stylesheet" href="/css/system_style.css" type="text/css">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/system.css" type="text/css">
     <script src="/js/logic.js" defer></script>
+    <title>System: <%= system.name %>
+    </title>
 </head>
+
 <body>
-    <script src="/js/star_background.js" defer></script>
+    <script src="/js/stars.js" defer></script>
     <canvas id="starfield" width="3000" height="2000"></canvas>
+    <div class="title">
+        <%= system.name %>
+    </div>
     <div class="content" id="content">
         <div class="system">
-            <div class="card">
-                <img src="/images/sun.png" onclick="onStarClick()">
-                <script>function onStarClick() { window.location.href = "/systems/systemid/starid" }</script>
+            <div class="starcard">
+                <div class="circle"></div>
+                <div class="card" onclick="onStarClick()">
+                    <div class="star"></div>
+                </div>
+                <div class="content">
+                    <h2><%= system.name %> </h2>
+                    <table class="table">
+                        <tr>
+                            <td>Radius</td>
+                            <td><%= system.radius %> km</td>
+                        </tr>
+                        <tr>
+                            <td>Mass</td>
+                            <td><%= system.mass %> kg</td>
+                        </tr>
+                        <tr>
+                            <td>Absolute magnitude</td>
+                            <td><%= system.absoluteMagnitude %></td>
+                        </tr>
+                    </table>
+                    <div class="buttons">
+                        <a class="edit" href="/system/edit/<%=system._id%>">Edit</a>
+                    </div>
+                </div>
             </div>
-            <div class="card planet" onclick="onPlanetClick()"></div>
-            <div class="card planet" onclick="onPlanetClick()"></div>
-            <div class="card planet" onclick="onPlanetClick()"></div>
-            <div class="card planet" onclick="onPlanetClick()"></div>
-            <div class="card planet" onclick="onPlanetClick()"></div>
-            <div class="card planet" onclick="onPlanetClick()"></div>
-            <div class="card planet" onclick="onPlanetClick()"></div>
-            <div class="card planet" onclick="onPlanetClick()"></div>
-            <div class="card planet" onclick="onPlanetClick()"></div>
-            <div class="card planet" onclick="onPlanetClick()"></div>
-            <div class="card planet" onclick="onPlanetClick()"></div>
-            <div class="card planet" onclick="onPlanetClick()"></div>
+            <% system._planets.forEach(function(planet) { %>
+                <div class="planetcard">
+                    <div class="circle"></div>
+                    <div class="content">
+                        <h2> <%=planet.name%> </h2>
+                        <table class="table">
+                            <tr>
+                                <td>Speed</td>
+                                <td><%= planet.orbitalSpeed %> km/s</td>
+                            </tr>
+                            <tr>
+                                <td>Mass</td>
+                                <td><%=planet.mass%> kg</td>
+                            </tr>
+                            <tr>
+                                <td>Radius</td>
+                                <td><%=planet.radius%> km</td>
+                            </tr>
+                        </table>
+                        <div class="buttons">
+                            <a class="edit" href="/system/edit/planet/<%=system._id%>/<%=planet._id%>">Edit</a>
+                            <a class="delete" href="/system/<%=system._id%>/<%=planet._id%>/delete">Delete</a>
+                        </div>
+                    </div>
+                    <div class="card planet"></div>
+                </div>
+            <% }); %>
         </div>
     </div>
-    <script>function onPlanetClick() { window.location.href = "/systems/systemid/planetid" }</script>
+    <div class="btns">
+        <a id="delsys" href="/system/<%=system._id%>/delete">Delete System</a>
+        <a id="addplanet" href="/system/<%=system._id%>/new">Create New Planet</a>
+    </div>
+    <script>function onPlanetClick() { window.location.href = "/system/systemid/planetid" }</script>
+    <script>function onStarClick() { window.location.href = "/systems/systemid/starid" }</script>
 </body>
 </html>

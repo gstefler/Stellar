@@ -10,10 +10,7 @@ const Star = db.model('Star', {
     radius: Number,
     mass: Number,
     absoluteMagnitude: Number,
-    _planet: {
-        type: Schema.Types.ObjectId,
-        ref: 'Planet'
-    }
+    _planets: [{ type: Schema.Types.ObjectId, ref: 'Planet' }]
 });
 
 module.exports = Star;

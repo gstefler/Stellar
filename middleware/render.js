@@ -1,13 +1,12 @@
 const { render } = require("ejs");
 
 /**
- * Kirendereli a viewName paraméterben kapott HTML oldalt
- * @param {*} objRepo object repo
- * @param {*} viewName HTML oldal neve
- * @returns 
+ * Render a view
+ * @param {object} objRepo The data to pass to the view
+ * @param {string} view The view to render
  */
-module.exports = function(objRepo, viewName){
-    return function(req, res){
-        res.render(viewName);
-    }
-}
+module.exports = (objRepo, view) => {
+  return (req, res) => {
+    res.render(view, objRepo);
+  };
+};

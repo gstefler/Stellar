@@ -1,20 +1,14 @@
-const PORT = 3000;
-
 const express = require('express');
 const app = express();
 
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-// Statikus fileok kiszolgálására
-app.use(express.static('static'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// Routing, a routing txt-ben megírtak alapján
-require('./route/routes')(app);
+require('./routes/routes.js')(app);
 
-
-// non existent route
-app.get('*', (req, res) => {
-    res.status(404).render('not_found');
+app.listen(3000, () => {
+    console.log('app listening on http://127.0.0.1:3000');
 });
-
-app.listen(PORT, () => {console.log("Listening on http://127.0.0.1:" + PORT)});
